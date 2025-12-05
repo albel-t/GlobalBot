@@ -1,3 +1,5 @@
+from config import *
+
 
 async def invite_user_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Создает сообщение-приглашение для пользователя"""

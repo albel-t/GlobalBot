@@ -1,4 +1,6 @@
 # Команда /help
+from config import *
+
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     help_text = """
 📚 *Доступные команды:*

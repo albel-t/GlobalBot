@@ -1,4 +1,7 @@
 # Обработка фото
+from config import *
+
+
 async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "🖼️ *Классное фото!*\n\nСпасибо за изображение!",

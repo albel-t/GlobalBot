@@ -1,4 +1,7 @@
 # Команда /start
+from config import *
+
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
         [InlineKeyboardButton("Помощь", callback_data="help")],

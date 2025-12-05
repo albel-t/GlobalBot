@@ -1,3 +1,5 @@
+from config import *
+
 # Обработка документов
 async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE):
     document = update.message.document

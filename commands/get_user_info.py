@@ -1,3 +1,6 @@
+from config import *
+
+
 async def get_user_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not context.args:
         await update.message.reply_text("❌ Укажите username: /user @username")

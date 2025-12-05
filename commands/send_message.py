@@ -1,4 +1,6 @@
 
+from config import *
+
 async def send_direct_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Отправка сообщения пользователю в ЛС по username"""
     if len(context.args) < 2:

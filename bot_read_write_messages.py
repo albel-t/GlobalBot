@@ -2,7 +2,8 @@ import logging
 import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, CallbackQueryHandler
-
+from commands import *
+from handlers import *
 # Настройка логирования
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -50,7 +51,7 @@ def main():
     # Обработчики команд
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("help", help_command))
-    application.add_handler(CommandHandler("info", info))
+    application.add_handler(CommandHandler("info", info_command))
     application.add_handler(CommandHandler("markdown", markdown_example))
     application.add_handler(CommandHandler("user", get_user_info))
     application.add_handler(CommandHandler("invite", invite_user_message))

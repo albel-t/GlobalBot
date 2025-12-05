@@ -1,5 +1,8 @@
 # Команда /info
-async def info(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+from config import *
+
+async def info_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     info_text = """
 🤖 *Информация о боте*
 

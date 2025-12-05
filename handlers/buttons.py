@@ -1,4 +1,6 @@
 
+from config import *
+
 
 # Команда /buttons
 async def buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
