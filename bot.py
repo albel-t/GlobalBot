@@ -2,6 +2,7 @@ import logging
 import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, CallbackQueryHandler
+from config import *
 
 # Настройка логирования
 logging.basicConfig(
@@ -291,15 +292,9 @@ async def invite_user_message(update: Update, context: ContextTypes.DEFAULT_TYPE
     
     username = context.args[0].replace('@', '')
     
-    invite_text = escape_markdown(f"""
-*Приглашение для @{username}*
-
-Чтобы бот мог вам писать, пожалуйста:
-1. Напишите мне в ЛС: @{context.bot.username}
-2. Или нажмите кнопку ниже
-
-После этого бот сможет отправлять вам сообщения!
-    """)
+    invite_text = add_info_to_str(text['invite'], 
+                    {'context.bot.username' : context.bot.username,
+                    'username': username})
     
     keyboard = [
         [InlineKeyboardButton("Написать боту", url=escape_markdown(f"https://t.me/{context.bot.username}"))],

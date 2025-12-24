@@ -4,6 +4,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, CallbackQueryHandler
 from commands import *
 from handlers import *
+from config import *
 # Настройка логирования
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -15,36 +16,9 @@ BOT_TOKEN = "7809421116:AAEJ2D6BHkNzrCt1W2ZUW_bPFSiDYewaoN8"
 
 
 
-
-
-
-
-
-def escape_markdown(text: str, version: int = 1) -> str:
-    """
-    Экранирует специальные символы для Markdown
-    version: 1 - Markdown, 2 - MarkdownV2
-    """
-    if version == 1:
-        # Экранирование для Markdown
-        escape_chars = r'\*_`\['
-    else:
-        # Экранирование для MarkdownV2 (более строгое)
-        escape_chars = r'\_*[]()~`>#+-=|{}.!'
-    
-    for char in escape_chars:
-        text = text.replace(char, f'\\{char}')
-    return text
-
-
-
-
-# Обработка ошибок
-async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    logging.error(f"Ошибка: {context.error}")
-
 # Основная функция
 def main():
+    
     # Создаем приложение
     application = Application.builder().token(BOT_TOKEN).build()
     

@@ -34,28 +34,8 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif query.data == "button2":
         await query.edit_message_text("✅ Вы нажали *Кнопку 2*!", parse_mode='Markdown')
     elif query.data == "help":
-        await query.edit_message_text("""
-📚 *Помощь по боту*
-
-*Команды:*
-/start - Начать работу
-/help - Помощь
-/info - Информация
-/invite - пригласить 
-/dm - писать в лс
-/user - информация о пользователе
-/markdown - Markdown пример
-/buttons - Кнопки
-        """, parse_mode='Markdown')
+        await query.edit_message_text(text['help-command'], parse_mode='Markdown')
     elif query.data == "info":
-        await query.edit_message_text("""
-🤖 *Информация*
-
-Простой бот с функциями:
-• Команды
-• Реакции на слова
-• Markdown
-• Файлы
-        """, parse_mode='Markdown')
+        await query.edit_message_text(text['help-info'], parse_mode='Markdown')
     elif query.data == "back":
         await query.edit_message_text("🔙 Возврат в главное меню")

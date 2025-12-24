@@ -2,26 +2,7 @@
 from config import *
 
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    help_text = """
-📚 *Доступные команды:*
-
-/start - Начать работу
-/help - Помощь и команды
-/message - Помощь и команды
-/info - Информация о боте
-/markdown - Пример Markdown оформления
-/buttons - Пример кнопок
-
-*Реакции на слова:*
-- Привет
-- Пока
-- Файл
-- Картинка
-
-*Также бот может:*
-- Отправлять файлы
-- Использовать Markdown
-- Отвечать на сообщения
-    """
+    await debug_print(update)
+    help_text = text["help-command"]
     
     await update.message.reply_text(help_text, parse_mode='Markdown')
