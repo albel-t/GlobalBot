@@ -3,18 +3,6 @@
 from config import *
 
 async def info_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    info_text = """
-🤖 *Информация о боте*
-
-*Версия:* 1.0
-*Функции:*
-• Ответы на команды
-• Реакция на ключевые слова
-• Поддржание общения
-• Отправка файлов
-• Инлайн кнопки
-
-*Разработчик:* @SanitySpook
-    """
+    info_text = text['help-info'].replace("[version]", version)
     
     await update.message.reply_text(info_text, parse_mode='Markdown')

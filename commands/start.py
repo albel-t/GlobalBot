@@ -3,7 +3,7 @@ from config import *
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    
+    await debug_print(update)
     keyboard = [
         [InlineKeyboardButton("Помощь", callback_data="help")],
         [InlineKeyboardButton("Информация", callback_data="info")]
